@@ -1,4 +1,5 @@
 const path = require('path');
+var htmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     
@@ -10,7 +11,13 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist/js'),
         filename: '[name]-[chunkhash].js'
-    }
+    },
+
+    plugins: [
+        new htmlWebpackPlugin({
+            template: 'index.html'
+        })
+    ]
 
 
 }

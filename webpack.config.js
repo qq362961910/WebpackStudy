@@ -2,11 +2,14 @@ const path = require('path');
 
 module.exports = {
     
-    entry: './src/script/main.js',
+    entry: {
+        main: './src/script/main.js',
+        a: ['./src/script/a.js', './src/script/b.js']
+    },
 
     output: {
         path: path.resolve(__dirname, 'dist/js'),
-        filename: 'bundle.js'
+        filename: '[name]-[chunkhash].js'
     }
 
 
